@@ -23,5 +23,5 @@ namespace SimpleMultiplayerVr.Controllers
             _clientButton.onClick.RemoveListener(() => NetworkManager.Singleton.StartClient());
             _serverButton.onClick.RemoveListener(() => NetworkManager.Singleton.StartServer());
         }
-    }    
+    }
 }

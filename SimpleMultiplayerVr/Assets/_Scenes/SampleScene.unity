@@ -186,6 +186,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerXR
       objectReference: {fileID: 0}
+    - target: {fileID: 9014170783705847993, guid: cb6fe3bb53090744a8f8b9fcf782991c,
+        type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170785475729497, guid: cb6fe3bb53090744a8f8b9fcf782991c,
+        type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
