@@ -1,24 +1,36 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Animator))]
-public class HandAnimation : MonoBehaviour
+public class NetworkHandAnimation : NetworkBehaviour
 {
     [SerializeField] InputActionReference _gripAction;
     [SerializeField] InputActionReference _pinchAction;
     [SerializeField] Animator _animator;
 
-    private void Awake() => GetReference();
-
     private void OnValidate() => GetReference();
-    
-    private void OnEnable()
+
+    public override void OnNetworkSpawn()
     {
+        if (!IsOwner) return;
+        
         _gripAction.action.performed += Gripping;
         _gripAction.action.canceled += Gripping;
 
         _pinchAction.action.performed += Pinching;
         _pinchAction.action.canceled += Pinching;
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        if(!IsOwner) return;
+        
+        _gripAction.action.performed -= Gripping;
+        _gripAction.action.canceled -= Gripping;
+
+        _pinchAction.action.performed -= Pinching;
+        _pinchAction.action.canceled -= Pinching;
     }
 
     private void Gripping(InputAction.CallbackContext obj) => _animator.SetFloat("Grip", obj.ReadValue<float>());
@@ -27,9 +39,6 @@ public class HandAnimation : MonoBehaviour
 
     private void GetReference()
     {
-        if (_animator == null)
-        {
-            _animator = GetComponent<Animator>();
-        }
+        if (_animator == null) _animator = GetComponent<Animator>();
     }
 }

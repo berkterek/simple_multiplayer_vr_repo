@@ -957,7 +957,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8249230696956201412}
   - component: {fileID: 2087626607}
-  - component: {fileID: 5160664991153019557}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -1003,20 +1002,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5160664991153019557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8732751464224707454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36c6da23fba6f4047adedd2f6678ab80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gripAction: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
-  _pinchAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
-  _animator: {fileID: 2087626607}
