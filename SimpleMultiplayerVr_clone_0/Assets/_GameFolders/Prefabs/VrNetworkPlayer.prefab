@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 2093254997340619960}
   - component: {fileID: 5507214292302361191}
   - component: {fileID: 7453520277908066958}
+  - component: {fileID: 6598374399201079647}
   m_Layer: 0
   m_Name: VrNetworkPlayer
   m_TagString: Untagged
@@ -249,6 +250,25 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &6598374399201079647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609169178872124007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f668c99f324a6283a5f524067e104a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderers:
+  - {fileID: 6543195775054255409}
+  - {fileID: 7486911581699860934}
+  - {fileID: 2635875197261549531}
+  - {fileID: 1332378634061598688}
+  _networkColor:
+    m_InternalValue: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &4826697108129539204
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +487,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 677406677846875515}
     m_Modifications:
+    - target: {fileID: 2952532519126844870, guid: 927232924abbe7749aba0b85a30aa1db,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 60783d82ed3010f4c9832d039f9b60c1, type: 2}
     - target: {fileID: 7252658992801458734, guid: 927232924abbe7749aba0b85a30aa1db,
         type: 3}
       propertyPath: m_Name
@@ -541,6 +566,12 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 895374272062671389}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &2635875197261549531 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2952532519126844870, guid: 927232924abbe7749aba0b85a30aa1db,
+    type: 3}
+  m_PrefabInstance: {fileID: 895374272062671389}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7169814624774699657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8065188552600285332, guid: 927232924abbe7749aba0b85a30aa1db,
@@ -592,6 +623,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4459832280658313914}
     m_Modifications:
+    - target: {fileID: 5600351654718454195, guid: eb778dafc62c34d42ba231befaedfcdf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 60783d82ed3010f4c9832d039f9b60c1, type: 2}
     - target: {fileID: 8249230696956201412, guid: eb778dafc62c34d42ba231befaedfcdf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -660,6 +696,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4670674333908494471}
   m_SourcePrefab: {fileID: 100100000, guid: eb778dafc62c34d42ba231befaedfcdf, type: 3}
+--- !u!137 &1332378634061598688 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5600351654718454195, guid: eb778dafc62c34d42ba231befaedfcdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 6901200620712916563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2807161310602503469 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8732751464224707454, guid: eb778dafc62c34d42ba231befaedfcdf,
