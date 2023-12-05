@@ -584,25 +584,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7685375737217272, guid: c3f83a3e6d55cc546b57fa1d634d5dbd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7685375737217273, guid: c3f83a3e6d55cc546b57fa1d634d5dbd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7685375737217273, guid: c3f83a3e6d55cc546b57fa1d634d5dbd, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7685375737217273, guid: c3f83a3e6d55cc546b57fa1d634d5dbd, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 262.1
       objectReference: {fileID: 0}
     - target: {fileID: 7685375737217273, guid: c3f83a3e6d55cc546b57fa1d634d5dbd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 147.05
       objectReference: {fileID: 0}
     - target: {fileID: 7685375737217273, guid: c3f83a3e6d55cc546b57fa1d634d5dbd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -152
       objectReference: {fileID: 0}
     - target: {fileID: 381404000916790760, guid: c3f83a3e6d55cc546b57fa1d634d5dbd,
         type: 3}
@@ -837,6 +841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6eb695d3ada6a0468e13f44b9aafe49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _joinCode: asdfa
   _hostButton: {fileID: 5927789911856040825}
   _clientButton: {fileID: 5927789911856040824}
   _serverButton: {fileID: 5927789911856040823}
