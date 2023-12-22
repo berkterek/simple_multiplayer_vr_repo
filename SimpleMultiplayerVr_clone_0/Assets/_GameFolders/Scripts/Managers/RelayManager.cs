@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using Unity.Services.Relay;
@@ -42,6 +43,34 @@ namespace SimpleMultiplayerVr.Managers
 
                 NetworkManager.Singleton.StartHost();
             });
+        }
+
+        public async UniTask<string> CreateRelayGameAsync(int maxPlayer)
+        {
+            try
+            {
+                Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxPlayer);
+                string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+                Debug.Log("The join code => " + joinCode);
+
+                _unityTransport.SetHostRelayData
+                (
+                    allocation.RelayServer.IpV4,
+                    (ushort)allocation.RelayServer.Port,
+                    allocation.AllocationIdBytes,
+                    allocation.Key,
+                    allocation.ConnectionData
+                );
+
+                NetworkManager.Singleton.StartHost();
+                return joinCode;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"{e}: {e.Message}");
+            }
+
+            return null;
         }
 
         public void JoinRelayGame(string joinCode)

@@ -9,6 +9,8 @@ namespace SimpleMultiplayerVr.Managers
 {
     public class AuthenticationManager : MonoBehaviour
     {
+        public static event System.Action SignedIn;
+        
         void Awake()
         {
             Login();
@@ -31,6 +33,8 @@ namespace SimpleMultiplayerVr.Managers
             
             await UnityServices.InitializeAsync(initializationOptions);
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            
+            SignedIn?.Invoke();
         }
     }
 }
