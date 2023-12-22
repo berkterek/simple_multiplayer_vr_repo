@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using SimpleMultiplayerVr.Managers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,15 +7,18 @@ namespace SimpleMultiplayerVr.Controllers
 {
     public class LobbyUiController : MonoBehaviour
     {
+        [SerializeField] Button _quickJoinButton;
         [SerializeField] Button _createLobbyButton;
         [SerializeField] Button _joinLobbyButton;
         [SerializeField] GameObject[] _panels;
 
-        void OnEnable()
+        async void OnEnable()
         {
             AuthenticationManager.SignedIn += HandleOnSignedIn; 
             _createLobbyButton.onClick.AddListener(() => UiEnable(2));
             _joinLobbyButton.onClick.AddListener(() => UiEnable(3));
+            await UniTask.WaitUntil(() => LobbyManager.Instance != null);
+            _quickJoinButton.onClick.AddListener(() => LobbyManager.Instance.QuickJoinLobbyAsync());
         }
 
         void OnDisable()

@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 8222447698407367100}
   - component: {fileID: 6592764183388525293}
   - component: {fileID: 6107006826499536959}
-  - component: {fileID: 7806654165686468725}
-  - component: {fileID: 79052945288449618}
+  - component: {fileID: 3902069950477866486}
   m_Layer: 0
   m_Name: '[NetworkManager]'
   m_TagString: Untagged
@@ -100,7 +99,7 @@ MonoBehaviour:
     PacketDelayMS: 0
     PacketJitterMS: 0
     PacketDropRate: 0
---- !u!114 &7806654165686468725
+--- !u!114 &3902069950477866486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,18 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7401467141101057182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6627deb4515506a46b9dd4af1f3f73ee, type: 3}
+  m_Script: {fileID: 11500000, guid: fab02920c50ecc24d8f2b16f3abfb403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &79052945288449618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7401467141101057182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42a366c911b444cd8f2d4b445146c0cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _unityTransport: {fileID: 6107006826499536959}

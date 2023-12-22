@@ -20,13 +20,16 @@ namespace SimpleMultiplayerVr.Managers
         {
             try
             {
-                CreateLobbyOptions createLobbyOptions = new CreateLobbyOptions();
-                createLobbyOptions.IsPrivate = false;
-                createLobbyOptions.Data = new Dictionary<string, DataObject>();
+                CreateLobbyOptions createLobbyOptions = new CreateLobbyOptions
+                {
+                    IsPrivate = false,
+                    Data = new Dictionary<string, DataObject>()
+                };
 
                 string joinCode = await RelayManager.Instance.CreateRelayGameAsync(lobbyData.MaxPlayer);
+                Debug.Log($"<color=red>{joinCode}</color>");
                 DataObject dataObject = new DataObject(DataObject.VisibilityOptions.Public, joinCode);
-                createLobbyOptions.Data.Add(LOBBY_DATA_KEY, dataObject);
+                createLobbyOptions.Data.Add(joinCode, dataObject);
                 
                 await Lobbies.Instance.CreateLobbyAsync(lobbyData.LobbyName, lobbyData.MaxPlayer, createLobbyOptions);
             }
@@ -42,6 +45,7 @@ namespace SimpleMultiplayerVr.Managers
             {
                 Lobby lobby = await Lobbies.Instance.QuickJoinLobbyAsync();
                 string relayJoinCode = lobby.Data[LOBBY_DATA_KEY].Value;
+                Debug.Log($"<color=red>{relayJoinCode}</color>");
                 
                 RelayManager.Instance.JoinRelayGame(relayJoinCode);
             }
